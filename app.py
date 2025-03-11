@@ -3,26 +3,22 @@ import numpy as np
 import pandas as pd
 import pickle
 
-
-# flask app
 app = Flask(__name__)
 
-
-
 # load databasedataset===================================
-sym_des = pd.read_csv("/home/dibyajit/Documents/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/symtoms_df.csv")
-precautions = pd.read_csv("/home/dibyajit/Documents/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/precautions_df.csv")
-workout = pd.read_csv("/home/dibyajit/Documents/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/workout_df.csv")
-description = pd.read_csv("/home/dibyajit/Documents/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/description.csv")
-medications = pd.read_csv('/home/dibyajit/Documents/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/medications.csv')
-diets = pd.read_csv("/home/dibyajit/Documents/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/diets.csv")
+sym_des = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/symtoms_df.csv")
+precautions = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/precautions_df.csv")
+workout = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/workout_df.csv")
+description = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/description.csv")
+medications = pd.read_csv('/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/medications.csv')
+diets = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/diets.csv")
 
 
 # load model===========================================
-svc = pickle.load(open('/home/dibyajit/Documents/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/svc.pkl','rb'))
+svc = pickle.load(open('/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/svc.pkl','rb'))
 
 
-#============================================================
+
 # custome and helping functions
 #==========================helper funtions================
 def helper(dis):
