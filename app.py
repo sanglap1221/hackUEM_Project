@@ -6,16 +6,16 @@ import pickle
 app = Flask(__name__)
 
 # load databasedataset===================================
-sym_des = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/symtoms_df.csv")
-precautions = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/precautions_df.csv")
-workout = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/workout_df.csv")
-description = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/description.csv")
-medications = pd.read_csv('/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/medications.csv')
-diets = pd.read_csv("/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/diets.csv")
+sym_des = pd.read_csv("/home/arpan/Documents/GitHub/hackUEM_Project/symtoms_df.csv")
+precautions = pd.read_csv("/home/arpan/Documents/GitHub/hackUEM_Project/precautions_df.csv")
+workout = pd.read_csv("/home/arpan/Documents/GitHub/hackUEM_Project/workout_df.csv")
+description = pd.read_csv("/home/arpan/Documents/GitHub/hackUEM_Project/description.csv")
+medications = pd.read_csv('/home/arpan/Documents/GitHub/hackUEM_Project/medications.csv')
+diets = pd.read_csv("/home/arpan/Documents/GitHub/hackUEM_Project/diets.csv")
 
 
 # load model===========================================
-svc = pickle.load(open('/home/arpan/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning/svc.pkl','rb'))
+svc = pickle.load(open('/home/arpan/Documents/GitHub/hackUEM_Project/svc.pkl','rb'))
 
 
 
@@ -25,7 +25,8 @@ def helper(dis):
     desc = description[description['Disease'] == dis]['Description']
     desc = " ".join([w for w in desc])
 
-    pre = precautions[precautions['Disease'] == dis][['Precaution_1', 'Precaution_2', 'Precaution_3', 'Precaution_4']]
+    pre = precautions[precautions['Disease'
+    ] == dis][['Precaution_1', 'Precaution_2', 'Precaution_3', 'Precaution_4']]
     pre = [col for col in pre.values]
 
     med = medications[medications['Disease'] == dis]['Medication']
